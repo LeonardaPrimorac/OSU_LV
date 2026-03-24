@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<script>
+d3.select("body")
+  .append("h1")
+  .text("Vizualizacija podataka LV1");
+
+var podaci = [1,2,3,4,5,6,7,8,9,10];
+
+var divovi = d3.select("body")
+    .selectAll("div")
+    .data(podaci)
+    .enter()
+    .append("div")
+    .attr("id", function(d) { return "ID" + d; });
+
+divovi.append("h2")
+    .text(function(d) { return "Podnaslov " + d; });
+
+divovi.append("p")
+    .text(function(d) { return "Tekst " + d + "."; });
+
+</script>
+
+</body>
+</html>
