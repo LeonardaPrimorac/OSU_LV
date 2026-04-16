@@ -15,9 +15,7 @@ img = image.load_img(img_path, target_size=(28, 28), color_mode='grayscale')
 img_array = image.img_to_array(img)
 img_array = img_array.astype('float32') / 255
 
-# NAPOMENA: Ako je tvoja slika crni broj na bijeloj pozadini, 
-# odkomentiraj donju liniju da je invertiraš (MNIST je bijelo na crnom):
-# img_array = 1 - img_array 
+img_array = 1 - img_array 
 
 # 4. PRIPREMA DIMENZIJA: Model očekuje (batch_size, height, width, channels)
 # Naša slika je trenutno (28, 28, 1), moramo dodati batch dimenziju da bude (1, 28, 28, 1)
